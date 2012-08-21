@@ -1,5 +1,6 @@
-This tutorial is the tutorial from http://learn.knockoutjs.com/#/?tutorial=loadingsaving
-with setup and tests from busterjs.org
+This tutorial is the tutorial from http://learn.knockoutjs.com/#/?tutorial=loadingsaving with setup and tests from busterjs.org
+
+It is built on the 601 tutorial, but this includes a little demonstration of how to include a simple proxy server to log all responses to and from your server.
 
 They require buster, node, npm to be set up on your system
 You should be able to install buster wihtout using sudo, but if it is installed with sudo...
