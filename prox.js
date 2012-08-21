@@ -1,12 +1,12 @@
-require('http')
+var http = require('http')
   , request = require('request')
   , winston = require('winston')
   , logger = new (winston.Logger)({ transports: [ new (winston.transports.File)({ filename: 'logs/http.log' }) ]})
   , responseBodyLogger = new (winston.Logger)({ transports: [ new (winston.transports.File)({ filename: 'logs/http-response-body.log' }) ]});
 
 http.createServer(function (req, res) {
-	var ricxUrl = 'http://localhost:8080';
-	var url = ricxUrl + req.url;
+	var serverUrl = 'http://localhost:1338';
+	var url = serverUrl + req.url;
 	var requester = request[req.method.toLowerCase()];
 	var x = requester(url);
 	req.on('data', function (chunk) {
