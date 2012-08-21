@@ -1,0 +1,23 @@
+This tutorial is the tutorial from http://learn.knockoutjs.com/#/?tutorial=loadingsaving
+with setup and tests from busterjs.org
+
+They require buster, node, npm to be set up on your system
+You should be able to install buster wihtout using sudo, but if it is installed with sudo...
+
+Link to buster
+	(sudo) npm link buster
+Install buster lint
+	(sudo) npm install buster-lint
+Install proxy deps
+	(sudo) npm install 
+	
+
+Start dummy server
+start a new terminal and run 
+node server.js
+
+
+Run tests
+	buster server
+	// Connect browser(s) to localhost:1111
+	buster test

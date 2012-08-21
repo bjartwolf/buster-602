@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="lib/knockout-2.1.0.js"> </script>
+    <script src="lib/jquery-1.8.0.min.js"> </script>
+    <script src="src/services.js"> </script>
+    <script src="src/ViewModel.js"> </script>
+    <script> 
+    $(document).ready(function () {
+        ko.applyBindings(new TaskListViewModel());
+    });
+    </script>
+</head>
+<body>
+<h3>Tasks</h3>
+
+<form data-bind="submit: addTask">
+  Add task: <input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+  <button type="submit">Add</button>
+</form>
+<ul data-bind="foreach: tasks, visible: tasks().length > 0">
+  <li>
+     <input type="checkbox" data-bind="checked: isDone" />
+     <input data-bind="value: title, disable: isDone" />
+     <a href="#" data-bind="click: $parent.removeTask">Delete</a>
+  </li> 
+</ul>
+You have <b data-bind="text: incompleteTasks().length"></b> incomplete task(s)
+<span data-bind="visible: incompleteTasks().length == 0"> - it's beer time!</span>
+<button data-bind="click: save">Save</button>
+</body>
